@@ -484,9 +484,14 @@ export const translations = {
         },
       ],
       social: [
-        { href: "https://instagram.com", label: "Instagram" },
-        { href: "https://facebook.com", label: "Facebook" },
-        { href: "https://tiktok.com", label: "TikTok" },
+        {
+          href: "https://www.instagram.com/smash_studio_bl?igsh=cHVuMXVhNWlpNjhq",
+          label: "Instagram",
+        },
+        {
+          href: "https://www.tiktok.com/@smash_studio_bl?_t=ZM-8ttJfdedMxx&_r=1",
+          label: "TikTok",
+        },
       ],
     },
   },
