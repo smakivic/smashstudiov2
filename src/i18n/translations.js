@@ -178,7 +178,7 @@ export const translations = {
           key: "Hours",
           val: "Mon \u2013 Fri: 12:00 \u2013 21:00",
         },
-        { key: "Phone", val: "+387 65-414/585", href: "tel:+38765414585" },
+        { key: "Phone", val: "+387 65414585", href: "tel:+38765414585" },
         {
           key: "Email",
           val: "smashstudiobl@gmail.com",
@@ -348,7 +348,7 @@ export const translations = {
         {
           number: "02",
           title: "DOĐI",
-          text: "Dođi 10 minuta ranije. Proćićemo kroz kratak uvodni razgovor — pravila, granice i kako to iskoristiti na pravi način.",
+          text: "Dođi 10 minuta ranije. Proći ćemo kroz kratak uvodni razgovor — pravila, granice i kako to iskoristiti na pravi način.",
         },
         {
           number: "03",
@@ -452,7 +452,7 @@ export const translations = {
           key: "Radno vrijeme",
           val: "Pon \u2013 Ned: 12:00 \u2013 21:00",
         },
-        { key: "Telefon", val: "+387 65-414/585", href: "tel:+38765414585" },
+        { key: "Telefon", val: "+387 65414585", href: "tel:+38765414585" },
         {
           key: "Email",
           val: "smashstudiobl@gmail.com",
