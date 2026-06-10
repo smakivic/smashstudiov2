@@ -1,0 +1,91 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+  background: var(--mid);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  opacity: 0.52;
+  line-height: 1.55;
+  max-width: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    var(--grey)   50%,
+    var(--border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  height: 320px;
+  border-radius: 0;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.error {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  opacity: 0.8;
+  padding: 24px 0;
+}
+
+/* ── Tablet (640px+) ──────────────────────────── */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 64px;
+  }
+
+  .note {
+    text-align: right;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skeleton {
+    height: 420px;
+  }
+}

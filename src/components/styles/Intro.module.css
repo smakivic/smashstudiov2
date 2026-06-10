@@ -1,0 +1,82 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 52px;
+}
+
+.headline {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin-bottom: 36px;
+}
+
+.accent {
+  color: var(--orange);
+}
+
+.statRow {
+  display: flex;
+  gap: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.stat {}
+
+.statNumber {
+  font-family: var(--display);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--orange);
+  letter-spacing: 0.02em;
+}
+
+.statLabel {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.5;
+  margin-top: 5px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.body p {
+  font-size: 1rem;
+  line-height: 1.72;
+  opacity: 0.72;
+}
+
+.body em {
+  font-style: italic;
+  opacity: 1;
+  color: var(--cream);
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .statRow {
+    gap: 52px;
+  }
+}

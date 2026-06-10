@@ -1,0 +1,36 @@
+.strip {
+  background: var(--orange);
+  padding: 13px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+
+.item {
+  font-family: var(--display);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--black);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-inline: 18px;
+}
+
+.dot {
+  font-size: 0.55rem;
+  opacity: 0.45;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+}

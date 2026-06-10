@@ -1,0 +1,89 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.card {
+  background: var(--mid);
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+}
+
+.quoteMark {
+  font-family: var(--display);
+  font-size: 4.5rem;
+  line-height: 0.5;
+  color: var(--orange);
+  opacity: 0.22;
+  margin-bottom: 18px;
+}
+
+.text {
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.72;
+  opacity: 0.78;
+  margin-bottom: 28px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1);
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+
+.stars {
+  font-size: 0.75rem;
+  color: var(--orange);
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+/* ── Tablet (640px+) ──────────────────────────── */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .title {
+    margin-bottom: 64px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

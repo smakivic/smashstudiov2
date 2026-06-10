@@ -1,0 +1,134 @@
+/* ── Mobile first ─────────────────────────────── */
+.card {
+  background: var(--black);
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+
+/* Orange left-edge accent on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--orange);
+  transition: height 0.4s ease;
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--grey);
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  opacity: 0.62;
+  margin-bottom: 28px;
+}
+
+.includes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.includes li {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.58;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.includes li::before {
+  content: '—';
+  color: var(--orange);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.price {
+  font-family: var(--display);
+  font-size: 2.4rem;
+  letter-spacing: 0.02em;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.price sup {
+  font-size: 0.9rem;
+  vertical-align: super;
+  opacity: 0.65;
+}
+
+/* ── Featured variant ─────────────────────────── */
+.featured {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.featured::before {
+  display: none;
+}
+
+.featured .tag    { color: var(--black); }
+.featured .name   { color: var(--black); }
+.featured .desc   { color: var(--black); }
+.featured .price  { color: var(--black); }
+
+.featured .includes li {
+  color: var(--black);
+  border-bottom-color: rgba(14, 13, 11, 0.18);
+}
+
+.featured .includes li::before {
+  color: var(--black);
+}
+
+/* Override ghost button inside featured to be inverted */
+.featured :global(.ghost) {
+  color: var(--black) !important;
+}

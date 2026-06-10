@@ -1,0 +1,58 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 9vw, 6.2rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.sub {
+  font-style: italic;
+  opacity: 0.58;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-bottom: 44px;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.email {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  opacity: 0.52;
+  transition: opacity 0.2s;
+}
+
+.email:hover {
+  opacity: 1;
+}
+
+/* ── Tablet (640px+) ──────────────────────────── */
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 28px;
+  }
+}

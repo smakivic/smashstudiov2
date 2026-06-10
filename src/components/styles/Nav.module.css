@@ -1,0 +1,255 @@
+/* ── Mobile first ─────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--pad-x);
+  transition: background 0.4s, padding 0.35s, border-color 0.35s;
+  border-bottom: 1px solid transparent;
+}
+
+.navOpen {
+  z-index: 103;
+}
+
+.scrolled {
+  background: rgba(14, 13, 11, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding-block: 12px;
+  border-bottom-color: var(--border);
+}
+
+.logo {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  position: relative;
+  z-index: 103;
+}
+
+.logoImg {
+  height: 48px;
+  width: auto;
+}
+
+.dot {
+  color: var(--orange);
+}
+
+/* Hamburger (mobile only) */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 103;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--cream);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile overlay */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 102;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+}
+
+.mobileLinks li a {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 10vw, 3.4rem);
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+  display: block;
+  padding: 4px 0;
+}
+
+.mobileLinks li a:hover {
+  opacity: 1;
+  color: var(--orange);
+}
+
+.mobileCta {
+  color: var(--orange) !important;
+  opacity: 1 !important;
+}
+
+/* Desktop links — hidden on mobile */
+.links {
+  display: none;
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .links a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .links a:hover {
+    opacity: 1;
+  }
+
+  .cta {
+    background: var(--orange);
+    color: var(--black) !important;
+    opacity: 1 !important;
+    padding: 10px 22px;
+    border: 2px solid var(--orange);
+    transition: background 0.22s, color 0.22s !important;
+  }
+
+  .cta:hover {
+    background: transparent !important;
+    color: var(--orange) !important;
+  }
+}
+
+/* ── Language toggle (shared base) ───────────── */
+.langToggle,
+.mobileLangToggle {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 0.5px solid var(--orange); 
+}
+
+/* Sliding orange pill */
+.langPill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 50%;
+  background: var(--orange);
+  transform: translateX(0);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.langPillRight {
+  transform: translateX(100%);
+}
+
+/* Buttons — inactive */
+.langBtn {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.45;
+  padding: 7px 13px;
+  line-height: 1;
+  transition: opacity 0.22s;
+}
+
+.langBtn:hover {
+  opacity: 0.9;
+}
+
+/* Buttons — active (text turns black to sit on the orange pill) */
+.langBtnActive {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: default;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 1;
+  padding: 7px 13px;
+  line-height: 1;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Mobile overlay toggle — bigger touch targets ─ */
+.mobileLangToggle {
+  margin-bottom: 44px;
+}
+
+.mobileLangToggle .langBtn,
+.mobileLangToggle .langBtnActive {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  padding: 13px 28px;
+}

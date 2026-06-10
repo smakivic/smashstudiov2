@@ -1,0 +1,94 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+  background: var(--mid);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+}
+
+.heading {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+}
+
+/* Info table */
+.infoTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+
+.row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.rowKey {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  flex: 0 0 80px;
+  padding-top: 2px;
+}
+
+.rowVal {
+  font-size: 0.93rem;
+  opacity: 0.72;
+  line-height: 1.6;
+}
+
+.rowVal a {
+  transition: opacity 0.2s;
+}
+
+.rowVal a:hover {
+  opacity: 0.5;
+}
+
+/* Map */
+.mapWrap {
+  width: 100%;
+  height: clamp(260px, 55vw, 380px);
+  background: var(--black);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(1) invert(0.88) contrast(0.88);
+  opacity: 0.75;
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .mapWrap {
+    height: 380px;
+  }
+
+  .rowKey {
+    flex-basis: 100px;
+  }
+}

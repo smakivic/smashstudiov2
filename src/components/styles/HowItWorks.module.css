@@ -1,0 +1,65 @@
+/* ── Mobile first ─────────────────────────────── */
+.section {
+  padding-block: var(--section-y);
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 28px;
+}
+
+.step {
+  position: relative;
+}
+
+.number {
+  font-family: var(--display);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--border);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  transition: color 0.4s;
+}
+
+.step:hover .number {
+  color: var(--orange);
+}
+
+.stepTitle {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+}
+
+.stepText {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  opacity: 0.58;
+}
+
+/* ── Desktop (960px+) ─────────────────────────── */
+@media (min-width: 960px) {
+  .title {
+    margin-bottom: 64px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .number {
+    font-size: 5.5rem;
+  }
+}
