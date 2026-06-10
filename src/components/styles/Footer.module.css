@@ -104,3 +104,26 @@
     align-items: flex-end;
   }
 }
+
+/* Dev credit bar */
+.devBar {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.devBar:hover {
+  opacity: 0.55;
+}
+
+.devLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 1;
+}

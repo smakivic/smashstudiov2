@@ -34,6 +34,20 @@ export default function Footer() {
           &copy; {year} {tr.footer.legalSuffix}
         </p>
       </div>
+
+      <div className={styles.devBar}>
+        <span>
+          {tr.footer.designed}
+          <a
+            href="https://github.com/smakivic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.devLink}
+          >
+            Stefan Makivić
+          </a>
+        </span>
+      </div>
     </footer>
   );
 }

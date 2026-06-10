@@ -211,6 +211,7 @@ export const translations = {
         { href: "https://facebook.com", label: "Facebook" },
         { href: "https://tiktok.com", label: "TikTok" },
       ],
+      designed: "Designed & developed by ",
     },
   },
 
@@ -493,6 +494,7 @@ export const translations = {
           label: "TikTok",
         },
       ],
+      designed: "Dizajnirao & izradio ",
     },
   },
 };
